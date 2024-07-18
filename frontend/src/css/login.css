@@ -1,0 +1,18 @@
+.form-container{
+    display: grid;
+    place-items: center;
+    min-height: 100vh; 
+
+}
+#loginForm{
+    width:40%;
+}
+#bannerImage{
+    background-image: url('../assets/maritime-training-academy-banner-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    max-width: 100%;
+
+    height:auto
+}
