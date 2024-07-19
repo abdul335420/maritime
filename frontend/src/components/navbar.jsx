@@ -73,7 +73,7 @@ export default function Navbar() {
     if (token) {
       getNotifications();
     }
-  }, [getNotifications, token]);
+  }, [token]);
 
   return (
     <nav
@@ -110,7 +110,7 @@ export default function Navbar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav ms-auto pt-2 pt-lg-0"> 
-            
+
             <li className="nav-item px-2">
               <a className="fw-medium nav-link" aria-current="page" href="/">
                 Home
