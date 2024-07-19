@@ -154,21 +154,11 @@ CREATE TABLE employers (
   PRIMARY KEY (employer_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
 -- Dumping data for table employers
---
 
-INSERT INTO employers (user_id,username, email, company_name, contact_email, contact_number, company_website, company_size, location, description) VALUES
-(4, 'Zara', 'zara@gmail.com', 'Devsinc', 'unknown@gmail.com', '032577985', 'www.unknown.com', 25, 'lahore', 'software house'),
-(7, 'Abdullah', 'abd@gmail.com', 'Devsort', 'loremipsum@gmail.com', '032577985', 'www.example.com', 100, 'islamabad', 'Software house'),
-(11, 'Ayesha', 'ayesha@gmail.com', 'IceCreativez', 'loremipsum@gmail.com', '032577985', 'www.example.com', 500, 'karachi', 'nestle'),
-(13, 'Wahaj', 'wahaj@gmail.com', 'Arbisoft', 'loremipsum@gmail.com', '032577985', 'www.example.com', 300, 'lahore', 'marketing agency'),
-(16, 'Hiba', 'hiba@gmail.com',  'Digital firm', 'loremipsum@gmail.com', '032577985', 'www.example.com', 500, 'islamabad', 'advertising company'),
-(17, 'Ahmad', 'ahmad@gmail.com', 'FiveRivers Technology', 'loremipsum@gmail.com', '031245478', 'www.example.com', 1000, 'lahore', 'Software company'),
-(18, 'Hina', 'hina@gmail.com', 'BPO Center', 'loremipsum@gmail.com', '012345', 'www.example.com', 2000, 'lahore', 'BPO service center'),
-(19, 'Ihtisham', 'Ihtisham@gmail.com', 'Codeninja', 'loremipsum@gmail.com', '012345', 'www.example.com', 1500, 'islamabad', 'US based software company'),
-(20, 'Umer', 'umer@gmail.com',  'Cybrnode', 'loremipsum@gmail.com', '012345', 'www.example.com', 25, 'lahore', 'startup'),
-(21, 'Iqra', 'iqra@gmail.com', 'Arhmasoft', 'loremipsum@gmail.com', '012345', 'www.example.com', 200, 'karachi', 'Software company specializing in artificial intelligence');
+INSERT INTO employers (user_id, username, email, company_name, contact_email, contact_number, company_website, company_size, location, description) VALUES
+(2, 'Zara', 'zara@gmail.com', 'Devsinc', 'unknown@gmail.com', '032577985', 'www.unknown.com', 25, 'lahore', 'software house'),
+(3, 'Abdullah', 'abd@gmail.com', 'Devsort', 'loremipsum@gmail.com', '032577985', 'www.example.com', 100, 'islamabad', 'Software house');
 
 
 --
@@ -238,16 +228,11 @@ CREATE TABLE jobseekers (
   CONSTRAINT FK_jobseekers_user_id FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
 -- Dumping data for table jobseekers
---
 
 INSERT INTO jobseekers (user_id, email, resumeURL, skills, workExperience, education, certifications, languages) VALUES
-(5, 'sara@gmail.com', 'sara.pdf', 'Java, Python, SQL', '5 years at TechCorp', 'B.Sc. Computer Science', 'Oracle Certified Java Programmer', 'English, Spanish'),
-(8, 'esha@gmail.com', 'esha.pdf', 'HTML, CSS, JavaScript', '3 years at WebDesign Ltd.', 'B.A. Graphic Design', 'Certified Web Developer', 'English, French'),
-(17, 'abdullah01@gmail.com', 'abdullah.pdf', 'C++, C#, .NET', '7 years at SoftSolutions', 'M.Sc. Software Engineering', 'Microsoft Certified Solutions Developer', 'English, German'),
-(22, 'juweria@gmail.com', 'juweria.pdf', 'Python, Data Science, R', '4 years at DataAnalytics Inc.', 'B.Sc. Data Science', 'Certified Data Scientist', 'English, Chinese'),
-(23, 'kiran@gmail.com', 'kiran.pdf', 'PHP, MySQL, Laravel', '6 years at WebTech', 'B.Sc. Information Technology', 'Zend Certified PHP Engineer', 'English, Japanese');
+(4, 'sara@gmail.com', 'sara.pdf', 'Java, Python, SQL', '5 years at TechCorp', 'B.Sc. Computer Science', 'Oracle Certified Java Programmer', 'English, Spanish'),
+(5, 'esha@gmail.com', 'esha.pdf', 'HTML, CSS, JavaScript', '3 years at WebDesign Ltd.', 'B.A. Graphic Design', 'Certified Web Developer', 'English, French');
 
 -- --------------------------------------------------------
 
@@ -362,17 +347,11 @@ CREATE TABLE students (
   PRIMARY KEY (std_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
 -- Dumping data for table students
---
 
 INSERT INTO students (user_id, studentName, studentIDNumber, first_name, last_name, contact_no, gender, address) VALUES
-(3, 'Ali Khan', 'std01', 'Ali', 'Khan', '03258967420', 'male', 'islamabad'),
-(6, 'Rehan Ahmed', 'std02', 'Rehan', 'Ahmed', '03258967421', 'male', 'lahore'),
-(9, 'Amna Sadiq', 'std03', 'Amna', 'Sadiq', '03158967420', 'female', 'karachi'),
-(10, 'Amna Saleem', 'std04', 'Amna', 'Saleem', '03150967420', 'female', 'islamabad'),
-(14, 'Saliha Nabil', 'std05', 'Saliha', 'Nabil', '03158968420', 'female', 'lahore'),
-(15, 'Ali Murtaza', 'std06', 'Ali', 'Murtaza', '03158967425', 'male', 'karachi');
+(6, 'Saliha', 'std01', 'Saliha', 'Khan', '03258967420', 'female', 'islamabad'),
+(7, 'Rehan Ahmed', 'std02', 'Rehan', 'Ahmed', '03258967421', 'male', 'lahore');
 
 -- --------------------------------------------------------
 
@@ -420,33 +399,15 @@ CREATE TABLE users (
   PRIMARY KEY (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
 -- Dumping data for table users
---
 
 INSERT INTO users (username, password, email, user_age, user_gender, role) VALUES
-('Noor', '$2a$10$cFT1XNBptu9NJgehylYBE.4rAyd0oir6y714NQl4cTkM9n/MSHt..', 'noor@gmail.com', 22, 'female', 'student'),
 ('Sohail', '$2a$10$e8Nbk3OBmbG1vwOrJP8fLOOXEFYfxYBAdUNbLmLZ9uguXc56DC3LG', 'sohail@gmail.com', 22, 'male', 'admin'),
-('Ali', '$2a$10$IXgVs0Def7/FS7/wdgqzou/F32sg/QDPAiLJHbs1qy7CvXXjzTaIy', 'ali@gmail.com', 20, 'male', 'student'),
-('Zara','$2a$10$oKdx5MXKP.alRrdzDNNYgOOQ7.Lr2LJMKC.LthIqVyBZYkaXBU1..' , 'zara@gmail.com', 26, 'female', 'employer'),
-('Sara', '$2a$10$IZs9d9aoJHCd2BvpfzZXau7Tq0n1Oa90De83/Gl1ngk3YyfRrAsSy', 'sara@gmail.com', 24, 'female', 'Job Seeker'),
-('Rehan', '$2a$10$kELbhaZ8wOA.GHCCFUvkn.jWN2QFrM/rWmP0.SaZY/2y/llHhN0AO', 'rehan@gmail.com', 20, 'male', 'student'),
+('Zara', '$2a$10$oKdx5MXKP.alRrdzDNNYgOOQ7.Lr2LJMKC.LthIqVyBZYkaXBU1..', 'zara@gmail.com', 26, 'female', 'employer'),
 ('Abdullah Rizwan', '$2a$10$R.6FFqvIJZgB8PE1NrXM0OvrBYlociX/AE9zzsHjf9JS/DxlDoVuS', 'abd@gmail.com', 28, 'male', 'employer'),
+('Sara', '$2a$10$IZs9d9aoJHCd2BvpfzZXau7Tq0n1Oa90De83/Gl1ngk3YyfRrAsSy', 'sara@gmail.com', 24, 'female', 'Job Seeker'),
 ('Esha', '$2a$10$AG5hdOjHvyM1H/MoRVoLrOwxqlVzPH3IWJxXH.Ve1J8dgDoXwVahm', 'esha@gmail.com', 27, 'female', 'Job Seeker'),
-('Amna', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'amna@gmail.com', 21, 'female', 'student'),
-('Ayesha', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'ayesha@gmail.com', 25, 'female', 'employer'),
-('Abdullah', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'abdullah@gmail.com', 26, 'Male', 'Job Seeker'),
-('Wahaj', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'wahaj@gmail.com', 25, 'Male', 'employer'),
-('Saliha', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'saliha@gmail.com', 22, 'Female', 'Student'),
-('Ali01', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'ali01@gmail.com', 22, 'Male', 'Student'),
-('Hiba', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'hiba@gmail.com', 24, 'Female', 'employer'),
-('Ahmad', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'ahmad@gmail.com', 25, 'Male', 'employer'),
-('Hina', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'hina@gmail.com', 21, 'Female', 'employer'),
-('Ihtisham', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'Ihtisham@gmail.com', 23, 'Male', 'employer'),
-('Umer', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'umer@gmail.com', 23, 'Male', 'employer'),
-('Iqra', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'iqra@gmail.com', 21, 'Female', 'employer'),
-('Juweria', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'juweria@gmail.com', 24, 'Female', 'Job Seeker'),
-('Kiran', '$2a$10$OuO2coipjf3xGb4HVjKDuewOLkDn1f7dTFQEBd2.tmntYhyz1mzeq', 'kiran@gmail.com', 21, 'Female', 'Job Seeker');
+('Rehan', '$2a$10$kELbhaZ8wOA.GHCCFUvkn.jWN2QFrM/rWmP0.SaZY/2y/llHhN0AO', 'rehan@gmail.com', 20, 'male', 'student'),
 
 --
 -- Indexes for dumped tables
