@@ -1,9 +1,14 @@
 .bg-holder d-none d-sm-block {
   background-position: right top;
   background-size: contain;
-
 }
 
+.home-section-bg {
+  background-image: url(../assets/hero-bg.jpg);
+  min-height: 50vh;
+  background-size: 100% 100%;
+  filter:grayscale(50%)
+}
 
 #signupform {
   background-color: rgba(255, 255, 255, 0.8);
@@ -52,13 +57,13 @@
 }
 
 #bannerImage {
-  background-image: url('../assets/maritime-training-academy-banner-1.jpg');
+  background-image: url("../assets/hero-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   max-width: 100%;
 
-  height: auto
+  height: auto;
 }
 
 footer {
@@ -106,14 +111,11 @@ footer .btn-primary {
 
 #home-banner-1 {
   background-image: url(../assets/img/jobsearch.avif);
-
-
-
+  background-size: cover;
 }
 
 #bg-holder2 {
   background-image: url(../assets/img/illustrations/hero-bg.png);
-
 }
 
 #create-account {

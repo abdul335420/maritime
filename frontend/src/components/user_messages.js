@@ -152,7 +152,7 @@ the following code was used for email input. when user types email manually in t
   </div>
 
   
-          <ToastContainer/>
+          
           </div>
         </div>
       
@@ -184,7 +184,7 @@ the following code was used for email input. when user types email manually in t
   </div>
 
   
-          <ToastContainer/>
+          
           </div>
         </div>
         </div>

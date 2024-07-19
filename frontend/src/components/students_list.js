@@ -74,7 +74,7 @@ export default function StudentsList() {
 })}
            
             </div>
-            <ToastContainer/>
+            
 
         </div>
 </div>

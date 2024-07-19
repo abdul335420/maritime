@@ -227,7 +227,7 @@ async function deleteJobApplication(app){
     return (
       <>
 
-<ToastContainer/>
+
 
 <div style={{minHeight:'100vh'}} className='pt-5 m-auto'>
 

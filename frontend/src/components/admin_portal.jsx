@@ -174,7 +174,7 @@ export default function AdminPage(){
     </div>
 
    </div>
-   <ToastContainer/>
+   
 </div>
 </div>
 )   

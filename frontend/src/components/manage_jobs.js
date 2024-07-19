@@ -66,7 +66,7 @@ function search(data) {
 
   return (
  <div>
-  <ToastContainer/>
+  
 
 <div style={{ padding: '16px', background: '#f1f3f7', height: '200px', width: '80%', margin: 'auto', borderRadius: '5px' }}>
         <div className='mb-3  m-auto' style={{ padding: '16px', width: '80%', height: '100px', background: '#ffffff', marginTop: 'auto' }}>
