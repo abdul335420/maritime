@@ -24,7 +24,7 @@ export default function Job_Portal() {
   const token = localStorage.getItem("authToken");
   const [appliedFlag, setAppliedFlag] = useState(false);
   const role = localStorage.getItem("role");
-  const navigate = useNavigate();
+const navigate = useNavigate()
   const [viewJobDescription, setViewJobDescription] = useState(false);
 
   // const authToken = localStorage.getItem('authToken')
@@ -60,50 +60,52 @@ export default function Job_Portal() {
     }
   };
   const applyForJob = async (id) => {
-    if (!token) {
-      navigate("/login");
-    } else {
-      const res = await axios.get(`${API_URL}/jobseeker/${jobSeeker_id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-
-      const resume_url = res.data.data.resumeURL;
-      let data = qs.stringify({
-        jobSeeker_id: jobSeeker_id,
-        job_id: id,
-        AppDate: new Date().toISOString().slice(0, 19).replace("T", " "),
-        Status: "pending",
-        ResumeURL: resume_url,
-      });
-
-      let config = {
-        method: "post",
-        maxBodyLength: Infinity,
-        url: `${API_URL}/create_job_application`,
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        data: data,
-      };
-
-      axios
-        .request(config)
-        .then((response) => {
-          if (response.status == 201) {
-            toast.success("Successfuly applied to job");
-            setAppliedFlag(true);
-            // setJobDetails([])
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    if(!token) {
+      navigate('/login')
     }
+    else{
+
+    
+    const res = await axios.get(`${API_URL}/jobseeker/${jobSeeker_id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+    const resume_url = res.data.data.resumeURL;
+    let data = qs.stringify({
+      jobSeeker_id: jobSeeker_id,
+      job_id: id,
+      AppDate: new Date().toISOString().slice(0, 19).replace("T", " "),
+      Status: "pending",
+      ResumeURL: resume_url,
+    });
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: `${API_URL}/create_job_application`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        if (response.status == 201) {
+          toast.success("Successfuly applied to job");
+          setAppliedFlag(true);
+          // setJobDetails([])
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+}
   function filterJobs(data) {
     if (filterQuery) {
       console.log(filterQuery, "filter query");
@@ -117,6 +119,7 @@ export default function Job_Portal() {
         return obj.location.toLowerCase() === filterQuery.toLowerCase();
       });
     }
+    
   }
 
   const [filterQuery, setFilterQuery] = useState();

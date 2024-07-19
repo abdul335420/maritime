@@ -109,7 +109,8 @@ export default function Navbar() {
           style={{ marginRight: "10%" }}
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav ms-auto pt-2 pt-lg-0">
+          <ul className="navbar-nav ms-auto pt-2 pt-lg-0"> 
+            
             <li className="nav-item px-2">
               <a className="fw-medium nav-link" aria-current="page" href="/">
                 Home
