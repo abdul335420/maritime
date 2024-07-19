@@ -65,7 +65,7 @@ export default function AdminNotifications(){
         <div  style={{minHeight:'100vh'}}>
         
         <div>
-        <ToastContainer/>
+        
 
 <div className='' style={{background:'rgb(241, 243, 247)', height:'100' ,margin:'auto',padding:'16px', paddingTop:'5px', color:'black'}}>
 <div className='w-75 m-auto '>

@@ -57,7 +57,7 @@ export default function ProgramInfo(){
   }, [])
     return(      
         <div className="container " style={{marginTop:'10%'}}>
-          <ToastContainer/>
+          
 
           <div className="">
             {program && program.map((programDetail)=>{

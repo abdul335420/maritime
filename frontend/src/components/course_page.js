@@ -109,7 +109,7 @@ export default function CourseInfo(){
             })}
 
 </div>
-<ToastContainer/>
+
   </div>
     )
 }
