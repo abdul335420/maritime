@@ -81,7 +81,7 @@ export default function Navbar() {
       data-navbar-on-scroll="data-navbar-on-scroll"
       style={{
         background:
-          " linear-gradient(208.18deg, #284c81 76.74% , #2844F7 9.05% )",
+          " linear-gradient(208.18deg, green 76.74% , red 9.05% )",
         marginBottom: "0px",
       }}
     >
@@ -179,7 +179,7 @@ export default function Navbar() {
               <Link
                 className={
                   location.pathname === "/programs"
-                    ? "active fw-medium nav-link "
+                    ? "active fw-medium nav-link  "
                     : "fw-medium nav-link"
                 }
                 to="/programs"

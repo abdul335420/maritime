@@ -11,7 +11,14 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DoneIcon from "@mui/icons-material/Done";
 import qs from "qs";
-import { Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import {
+  Button,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 
 export default function Job_Portal() {
   const [myJobs, setmyJobs] = useState([]);
@@ -24,7 +31,7 @@ export default function Job_Portal() {
   const token = localStorage.getItem("authToken");
   const [appliedFlag, setAppliedFlag] = useState(false);
   const role = localStorage.getItem("role");
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const [viewJobDescription, setViewJobDescription] = useState(false);
 
   // const authToken = localStorage.getItem('authToken')
@@ -60,52 +67,49 @@ const navigate = useNavigate()
     }
   };
   const applyForJob = async (id) => {
-    if(!token) {
-      navigate('/login')
-    }
-    else{
-
-    
-    const res = await axios.get(`${API_URL}/jobseeker/${jobSeeker_id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
-    const resume_url = res.data.data.resumeURL;
-    let data = qs.stringify({
-      jobSeeker_id: jobSeeker_id,
-      job_id: id,
-      AppDate: new Date().toISOString().slice(0, 19).replace("T", " "),
-      Status: "pending",
-      ResumeURL: resume_url,
-    });
-
-    let config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: `${API_URL}/create_job_application`,
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      data: data,
-    };
-
-    axios
-      .request(config)
-      .then((response) => {
-        if (response.status == 201) {
-          toast.success("Successfuly applied to job");
-          setAppliedFlag(true);
-          // setJobDetails([])
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+    if (!token) {
+      navigate("/login");
+    } else {
+      const res = await axios.get(`${API_URL}/jobseeker/${jobSeeker_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       });
+      const resume_url = res.data.data.resumeURL;
+      let data = qs.stringify({
+        jobSeeker_id: jobSeeker_id,
+        job_id: id,
+        AppDate: new Date().toISOString().slice(0, 19).replace("T", " "),
+        Status: "pending",
+        ResumeURL: resume_url,
+      });
+
+      let config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: `${API_URL}/create_job_application`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        data: data,
+      };
+
+      axios
+        .request(config)
+        .then((response) => {
+          if (response.status == 201) {
+            toast.success("Successfuly applied to job");
+            setAppliedFlag(true);
+            // setJobDetails([])
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
-}
   function filterJobs(data) {
     if (filterQuery) {
       console.log(filterQuery, "filter query");
@@ -119,7 +123,6 @@ const navigate = useNavigate()
         return obj.location.toLowerCase() === filterQuery.toLowerCase();
       });
     }
-    
   }
 
   const [filterQuery, setFilterQuery] = useState();
@@ -188,6 +191,7 @@ const navigate = useNavigate()
             <TextField
               fullWidth
               variant="outlined"
+              size="large"
               onChange={(e) => setSearchQuery(e.target.value)}
               type="text"
             />
@@ -300,12 +304,12 @@ const navigate = useNavigate()
               })}
           </div>
           <hr />
-          <br></br>
-          <div className="row row-cols-1 row-cols-md-2 g-4 w-100">
+          <br />
+          <Grid container spacing={1} mt={3}>
             {unappliedJobs.map((job) => {
               const jobID = job.job_id;
               return (
-                <div className="col">
+                <Grid item lg={3.9} sm={6} xs={12} px={2}>
                   <div
                     className="card job-card mb-3"
                     key={job.job_id}
@@ -328,23 +332,22 @@ const navigate = useNavigate()
                         .slice(0, 19)
                         .replace("T", " ")}
                     </p>
-                    <div>
-                      <a
-                        href="#"
+                    <div className="m-3">
+                      <Button
+                        variant="contained"
+                        size="large"
                         onClick={() => {
                           fetchJobDescription(jobID);
                         }}
-                        style={{ width: "auto" }}
-                        className="btn btn-primary m-auto mb-3"
                       >
                         View
-                      </a>
+                      </Button>
                     </div>
                   </div>
-                </div>
+                </Grid>
               );
             })}
-          </div>
+          </Grid>
         </div>
         <div
           className=" job-description "

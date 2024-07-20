@@ -130,6 +130,7 @@ export default function Login() {
                     id="InputEmail"
                     label="Enter Password"
                     variant="outlined"
+                    type="password"
                     required
                     fullWidth
                     onChange={handlePassword}
@@ -140,9 +141,6 @@ export default function Login() {
                     Don't have account? Signup Here
                   </a>
                   <br />
-                  <a className="link-primary" href="/forgot_password">
-                    Forgot Password?
-                  </a>
                 </div>
 
                 <Button
